@@ -24,8 +24,8 @@ router.get('/info', async (req, res) => {
     }
 })
 
-router.get('/generate', async (req,res)=>{
-    const {id} = req.body
+router.get('/generate/:id', async (req,res)=>{
+    const {id} = req.params;
     try {
         const user = await UserModel.findOne({_id:id});
         const {category,level,number}= user
